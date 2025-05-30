@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  template: `
+  <input [(ngModel)]="email" type="email" placeholder="Enter your email" />
+  {{ email }}`,
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'login';
+  public email: string = '';
 }
